@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-08T07:20:55.331Z",
+    "end": "2024-05-08T07:21:09.820Z",
+    "duration": 14489,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "31c1fbaf-bf27-43f9-ae1c-3593a0d99636",
+      "title": "",
+      "fullFile": "cypress\\e2e\\wikipedia-tests\\search.cy.ts",
+      "file": "cypress\\e2e\\wikipedia-tests\\search.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "38b4e3f4-f38c-4681-b597-f2b4aa4cbfef",
+          "title": "Wikipedia Search Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should perform a search and navigate to the correct article",
+              "fullTitle": "Wikipedia Search Tests should perform a search and navigate to the correct article",
+              "timedOut": null,
+              "duration": 3672,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var searchTerm = 'Test';\ncy.get('#searchInput').type(searchTerm);\ncy.get('#searchform button').click();\n// Assert that the correct URL is opened and the article title is correct\ncy.url().should('include', \"/wiki/\".concat(encodeURIComponent(searchTerm)));\ncy.contains(searchTerm).should('be.visible');",
+              "err": {},
+              "uuid": "7cfafd0c-9022-494f-8fe2-d36135ad9995",
+              "parentUUID": "38b4e3f4-f38c-4681-b597-f2b4aa4cbfef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return results for a variety of search terms",
+              "fullTitle": "Wikipedia Search Tests should return results for a variety of search terms",
+              "timedOut": null,
+              "duration": 10452,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(function (data) {\n    data.searchTerms.forEach(function (term) {\n        cy.get('#searchInput').type(term);\n        cy.get('#searchform button').click();\n        cy.url().should('include', \"/wiki/\".concat(encodeURIComponent(term)));\n        cy.contains(term).should('be.visible');\n        cy.go('back'); // Return to the main page for the next search\n    });\n});",
+              "err": {},
+              "uuid": "34267afb-5df9-4f6f-b024-0f68a5728232",
+              "parentUUID": "38b4e3f4-f38c-4681-b597-f2b4aa4cbfef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7cfafd0c-9022-494f-8fe2-d36135ad9995",
+            "34267afb-5df9-4f6f-b024-0f68a5728232"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14124,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-08T07:20:31.947Z",
+    "end": "2024-05-08T07:20:38.146Z",
+    "duration": 6199,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4387bd79-0a7f-4f57-9397-74379a5eff0a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\wikipedia-tests\\language.cy.ts",
+      "file": "cypress\\e2e\\wikipedia-tests\\language.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b9733b3-d705-4d65-b2e2-d4aa6d1dbec1",
+          "title": "Wikipedia Language Switching Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should switch to an alternative language",
+              "fullTitle": "Wikipedia Language Switching Tests should switch to an alternative language",
+              "timedOut": null,
+              "duration": 5963,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('example.json').then(function (data) {\n    var language = data.languages.alternative;\n    // Click the language menu checkbox to open it\n    cy.get('#p-lang-btn').should('be.visible').click(); // Ensure visibility before clicking\n    // Ensure the menu has loaded and is visible\n    cy.get('input[placeholder=\"Search for a language\"]').type('fr'); // Type the language code\n    cy.get('li[data-code=\"fr\"]').should('be.visible'); // Check if the menu is visible\n    // Find and click the desired language\n    cy.get('a[href=\"https://fr.wikipedia.org/wiki/\"]')\n        .contains(language) // Ensure we're clicking on the right language\n        .click(); // Click the language link\n    // Verify that the URL changes and the page is displayed in the selected language\n    cy.url().should('include', '/wiki/'); // Confirm navigation\n});",
+              "err": {},
+              "uuid": "1c3b455e-2c6b-45d0-b241-b4f6fcd3abdd",
+              "parentUUID": "7b9733b3-d705-4d65-b2e2-d4aa6d1dbec1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1c3b455e-2c6b-45d0-b241-b4f6fcd3abdd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5963,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

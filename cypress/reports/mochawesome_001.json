@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-08T07:20:20.451Z",
+    "end": "2024-05-08T07:20:25.581Z",
+    "duration": 5130,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bacb07bc-b4e8-4ba7-94cf-d4a3bf2b9114",
+      "title": "",
+      "fullFile": "cypress\\e2e\\wikipedia-tests\\edit.cy.ts",
+      "file": "cypress\\e2e\\wikipedia-tests\\edit.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "28facd38-d07a-427b-8765-8c93d133cb27",
+          "title": "Wikipedia Edit Capability Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should navigate to the edit page for an article (if logged in)",
+              "fullTitle": "Wikipedia Edit Capability Tests should navigate to the edit page for an article (if logged in)",
+              "timedOut": null,
+              "duration": 4570,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Note: This test is for logged-in users. It might require specific authentication handling.\ncy.visit('/wiki/Automation_testing'); // Navigate to a known article\ncy.get('#ca-edit').click(); // Click the \"Edit\" button\n// Assert that the URL indicates the edit mode\ncy.url().should('include', 'action=edit');",
+              "err": {},
+              "uuid": "2ddbac68-0895-4202-a701-e7349fe7531b",
+              "parentUUID": "28facd38-d07a-427b-8765-8c93d133cb27",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2ddbac68-0895-4202-a701-e7349fe7531b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4570,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
