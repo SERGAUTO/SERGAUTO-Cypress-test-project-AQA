@@ -1,0 +1,42 @@
+name: Cypress Workflow
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main # Trigger on pull requests to the main branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3 # Checkout the repository
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3 # Set up Node.js
+        with:
+          node-version: '18' # Set Node.js version
+
+      - name: Install Dependencies
+        run: npm install # Install project dependencies
+
+      - name: Run Cypress Tests
+        run: npx cypress run # Run Cypress tests in headless mode
+
+      - name: Upload Cypress Screenshots
+        if: failure() # Only upload screenshots if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots # Upload screenshots folder
+
+      - name: Upload Cypress Videos
+        if: failure() # Only upload videos if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-videos
+          path: cypress/videos # Upload videos folder

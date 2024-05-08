@@ -13,7 +13,7 @@ TESt
 ## Project Overview
 The project is designed to test critical functionalities on Wikipedia, including:
 - Search functionality
-- Navigation to random articles
+- Navigation to current events page
 - Language switching
 - Main page links
 - Editing capability (for logged-in users)
@@ -44,7 +44,7 @@ To run the tests in headless mode, use:
 The following test scenarios are included in this project:
 
 1. Search Functionality: Tests the ability to search for articles on Wikipedia.
-2. Random Article Navigation: Validates the "Random article" link.
+2. Current Events Page: Validates the "Current Events Page".
 3. Language Switching: Tests the ability to switch languages.
 4. Main Page Links: Verifies links like "Featured article," "In the news," and "Did You Know?".
 5. Edit Capability: Tests the ability to access the edit page for an article (for logged-in users).
