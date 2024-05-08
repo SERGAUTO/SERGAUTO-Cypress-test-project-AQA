@@ -4,31 +4,27 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://en.wikipedia.org',
     setupNodeEvents(on, config) {
-      // Handle events such as task creation or plugins setup here.
-      // For example, you can configure plugins or add custom tasks.
-      
-      // This example configures a custom task for logging
       on('task', {
         logMessage(message) {
           console.log(message);
-          return null; // Cypress requires a return value for tasks
+          return null;
         },
       });
 
-      return config; // Always return the updated config
+      return config;
     },
-    specPattern: 'cypress/e2e/**/*.cy.ts', // Path to test files
-    supportFile: 'cypress/support/index.ts', // Path to support file
+    specPattern: 'cypress/e2e/**/*.cy.ts',
+    supportFile: false,
   },
-  viewportWidth: 1280, // Set default viewport width
-  viewportHeight: 720, // Set default viewport height
-  screenshotOnRunFailure: true, // Enable screenshots on test failure
-  video: true, // Enable video recording
-  reporter: 'mochawesome', // Use Mochawesome as the test reporter
+  viewportWidth: 1280,
+  viewportHeight: 720,
+  screenshotOnRunFailure: true,
+  video: true,
+  reporter: 'mochawesome',
   reporterOptions: {
-    reportDir: 'cypress/reports', // Directory for test reports
-    overwrite: false, // Do not overwrite reports
-    html: true, // Generate HTML reports
-    json: true, // Generate JSON reports
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: true,
+    json: true,
   },
 });

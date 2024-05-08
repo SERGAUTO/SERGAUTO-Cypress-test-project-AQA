@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-05-08T07:20:08.703Z",
-    "end": "2024-05-08T07:20:14.014Z",
-    "duration": 5311,
+    "start": "2024-05-08T11:32:55.757Z",
+    "end": "2024-05-08T11:32:58.277Z",
+    "duration": 2520,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7438d029-7a9e-41a3-865a-66a83a60f35b",
+      "uuid": "084aa2dc-1f03-4d52-bef2-89a20ae4dc0f",
       "title": "",
       "fullFile": "cypress\\e2e\\wikipedia-tests\\current-events.cy.ts",
       "file": "cypress\\e2e\\wikipedia-tests\\current-events.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1927589d-8fc0-4e3e-a146-71883318457b",
+          "uuid": "ad70c0b5-8cc4-451e-be65-6efd5afb7718",
           "title": "Wikipedia Current Events Page Test",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "should navigate to the Current Events page",
               "fullTitle": "Wikipedia Current Events Page Test should navigate to the Current Events page",
               "timedOut": null,
-              "duration": 5193,
+              "duration": 2387,
               "state": "passed",
-              "speed": "medium",
+              "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.get('#vector-main-menu-dropdown-checkbox').click();\n// Find and click the \"Current events\" link\ncy.contains('Current events')\n    .should('be.visible') // Ensure the link is visible\n    .click(); // Click to navigate to the Current Events page\n// Validate that the URL changes to the Current Events page\ncy.url().should('include', '/wiki/Portal:Current_events'); // Check the URL\n// Confirm the correct page title\ncy.contains('Portal:Current events').should('be.visible'); // Check for the title\n// Ensure there's content indicating recent news\ncy.get('.p-current-events-headlines').contains('Recent deaths:').should('exist'); // Check for news section\n// Optionally, check for the presence of a calendar or other navigation options\ncy.get('.p-current-events-calendar').should('exist'); // Verify the presence of a calendar",
+              "code": "cy.get('#vector-main-menu-dropdown-checkbox').click();\ncy.contains('Current events')\n    .should('be.visible')\n    .click();\ncy.url().should('include', '/wiki/Portal:Current_events');\ncy.contains('Portal:Current events').should('be.visible');\ncy.get('.p-current-events-headlines').contains('Recent deaths:').should('exist');\ncy.get('.p-current-events-calendar').should('exist');",
               "err": {},
-              "uuid": "efd5f024-200a-4fb5-8d8c-28e9096c7106",
-              "parentUUID": "1927589d-8fc0-4e3e-a146-71883318457b",
+              "uuid": "04ae8a11-4442-4d0e-8ec0-977c0f513a90",
+              "parentUUID": "ad70c0b5-8cc4-451e-be65-6efd5afb7718",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "efd5f024-200a-4fb5-8d8c-28e9096c7106"
+            "04ae8a11-4442-4d0e-8ec0-977c0f513a90"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5193,
+          "duration": 2387,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

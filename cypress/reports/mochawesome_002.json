@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-05-08T07:20:31.947Z",
-    "end": "2024-05-08T07:20:38.146Z",
-    "duration": 6199,
+    "start": "2024-05-08T11:33:07.657Z",
+    "end": "2024-05-08T11:33:10.747Z",
+    "duration": 3090,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4387bd79-0a7f-4f57-9397-74379a5eff0a",
+      "uuid": "916f2e19-fbf0-440e-abf7-777619951e93",
       "title": "",
       "fullFile": "cypress\\e2e\\wikipedia-tests\\language.cy.ts",
       "file": "cypress\\e2e\\wikipedia-tests\\language.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7b9733b3-d705-4d65-b2e2-d4aa6d1dbec1",
+          "uuid": "bdd61b61-9a42-4c40-b16c-e3b24e29fbc8",
           "title": "Wikipedia Language Switching Tests",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "should switch to an alternative language",
               "fullTitle": "Wikipedia Language Switching Tests should switch to an alternative language",
               "timedOut": null,
-              "duration": 5963,
+              "duration": 3034,
               "state": "passed",
-              "speed": "medium",
+              "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.fixture('example.json').then(function (data) {\n    var language = data.languages.alternative;\n    // Click the language menu checkbox to open it\n    cy.get('#p-lang-btn').should('be.visible').click(); // Ensure visibility before clicking\n    // Ensure the menu has loaded and is visible\n    cy.get('input[placeholder=\"Search for a language\"]').type('fr'); // Type the language code\n    cy.get('li[data-code=\"fr\"]').should('be.visible'); // Check if the menu is visible\n    // Find and click the desired language\n    cy.get('a[href=\"https://fr.wikipedia.org/wiki/\"]')\n        .contains(language) // Ensure we're clicking on the right language\n        .click(); // Click the language link\n    // Verify that the URL changes and the page is displayed in the selected language\n    cy.url().should('include', '/wiki/'); // Confirm navigation\n});",
+              "code": "cy.fixture('testData.json').then(function (data) {\n    var language = data.languages.alternative;\n    cy.get('#p-lang-btn').should('be.visible').click();\n    cy.get('input[placeholder=\"Search for a language\"]').type('fr');\n    cy.get('li[data-code=\"fr\"]').should('be.visible');\n    cy.get('a[href=\"https://fr.wikipedia.org/wiki/\"]')\n        .contains(language)\n        .click();\n    cy.url().should('include', '/wiki/');\n});",
               "err": {},
-              "uuid": "1c3b455e-2c6b-45d0-b241-b4f6fcd3abdd",
-              "parentUUID": "7b9733b3-d705-4d65-b2e2-d4aa6d1dbec1",
+              "uuid": "e5e5986d-b6b6-432d-a07b-98dfaddcc565",
+              "parentUUID": "bdd61b61-9a42-4c40-b16c-e3b24e29fbc8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1c3b455e-2c6b-45d0-b241-b4f6fcd3abdd"
+            "e5e5986d-b6b6-432d-a07b-98dfaddcc565"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5963,
+          "duration": 3034,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
